@@ -1,5 +1,5 @@
 import 'node_modules/flatpickr/dist/flatpickr.css';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -8,6 +8,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { InformationViewComponent } from './information-view/information-view.co
 import { PhotoGalleryViewComponent } from './photo-gallery-view/photo-gallery-view.component';
 import { BoosterInfoViewComponent } from './booster-info-view/booster-info-view.component';
 import { HistoryViewComponent } from './history-view/history-view.component';
+import { HeadModalViewComponent } from './head-modal-view/head-modal-view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { HistoryViewComponent } from './history-view/history-view.component';
     InformationViewComponent,
     PhotoGalleryViewComponent,
     BoosterInfoViewComponent,
-    HistoryViewComponent
+    HistoryViewComponent,
+    HeadModalViewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,11 @@ import { HistoryViewComponent } from './history-view/history-view.component';
     NgbModalModule,
     CommonModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
